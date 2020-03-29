@@ -29,7 +29,9 @@ export default () => {
           <Menu id='menu' theme='dark' mode='inline' defaultSelectedKeys={['1']}>
             <Menu.Item key='1'>
               <UserOutlined />
-              <span><Link to="/">React Hooks Interval</Link></span>
+              <span>
+                <Link to='/'>React Hooks Interval</Link>
+              </span>
             </Menu.Item>
             <Menu.Item key='2'>
               <VideoCameraOutlined />
@@ -47,13 +49,7 @@ export default () => {
               {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             </div>
           </Header>
-          <Content
-            className='site-layout-background'
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280
-            }}>
+          <Content>
             <Routes />
           </Content>
         </Layout>
