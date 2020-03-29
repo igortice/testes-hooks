@@ -7,6 +7,8 @@ import {
   VideoCameraOutlined
 } from '@ant-design/icons';
 import React, { useState } from 'react';
+import Routes from '../configs/Routes';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 export default () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -14,20 +16,20 @@ export default () => {
   const { Header, Sider, Content } = Layout;
 
   return (
-    <>
+    <Router>
       <Layout>
         <Sider
           trigger={null}
           collapsible
           collapsed={collapsed}
           style={{
-            height: '100vh',
+            height: '100vh'
           }}>
           <div className='logo' />
-          <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
+          <Menu id='menu' theme='dark' mode='inline' defaultSelectedKeys={['1']}>
             <Menu.Item key='1'>
               <UserOutlined />
-              <span>nav 1</span>
+              <span><Link to="/">React Hooks Interval</Link></span>
             </Menu.Item>
             <Menu.Item key='2'>
               <VideoCameraOutlined />
@@ -52,10 +54,10 @@ export default () => {
               padding: 24,
               minHeight: 280
             }}>
-            Content
+            <Routes />
           </Content>
         </Layout>
       </Layout>
-    </>
+    </Router>
   );
 };
